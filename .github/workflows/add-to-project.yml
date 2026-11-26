@@ -1,0 +1,46 @@
+# Copy into a repository as .github/workflows/add-to-project.yml
+# Requires org/repo secret ADD_TO_PROJECT_TOKEN (see limitlesslearning/.github README).
+name: Add to project
+
+on:
+  issues:
+    types:
+      - opened
+      - transferred
+      - reopened
+  pull_request:
+    types:
+      - opened
+      - reopened
+
+jobs:
+  add-to-project:
+    name: Add to Limitless Learning board
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v2
+        with:
+          project-url: https://github.com/orgs/limitlesslearning/projects/1
+          github-token: ${{ secrets.ADD_TO_PROJECT_TOKEN }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
