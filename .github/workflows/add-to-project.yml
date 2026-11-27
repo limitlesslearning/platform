@@ -15,7 +15,7 @@ on:
 
 jobs:
   add-to-project:
-    name: Add to Limitless Learning board
+    name: Add to Klados board
     runs-on: ubuntu-latest
     steps:
       - uses: actions/add-to-project@v2
