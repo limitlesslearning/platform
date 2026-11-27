@@ -1,0 +1,242 @@
+/* Klados brand tokens. Source: docs/brand/BRAND.md. One ink, one inverse, optional accent. */
+:root {
+	--ink: #1f2a44;
+	--inverse: #f4f6fb;
+	--accent: #3b7be0;
+
+	--bg: var(--inverse);
+	--surface: #ffffff;
+	--text: var(--ink);
+	--muted: #4a5570;
+	--border: #c9d0de;
+	--focus: var(--accent);
+	--bar-track: #dde3ee;
+	--bar-fill: var(--ink);
+	--notice-bg: #fff7e0;
+	--notice-border: #8a6d00;
+	--notice-text: #4d3d00;
+
+	--radius: 10px;
+	--font:
+		Inter, 'Noto Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+		sans-serif;
+	--mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #0d1117;
+		--surface: #161d2b;
+		--text: var(--inverse);
+		--muted: #b6bfd2;
+		--border: #34405a;
+		--bar-track: #2a3550;
+		--bar-fill: var(--inverse);
+		--notice-bg: #2b2410;
+		--notice-border: #d9b54a;
+		--notice-text: #f3e2a8;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: var(--font);
+	background: var(--bg);
+	color: var(--text);
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.25;
+	letter-spacing: -0.01em;
+	margin: 0 0 0.5rem;
+}
+
+h1 {
+	font-size: 1.75rem;
+	font-weight: 600;
+}
+
+h2 {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+p {
+	margin: 0 0 0.75rem;
+}
+
+a {
+	color: inherit;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+}
+
+a:hover {
+	text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+	outline: 3px solid var(--focus);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+code,
+pre {
+	font-family: var(--mono);
+	font-size: 0.9em;
+}
+
+pre {
+	background: var(--bg);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	padding: 0.75rem 1rem;
+	overflow-x: auto;
+}
+
+.card {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 1.25rem;
+}
+
+.muted {
+	color: var(--muted);
+}
+
+.stack > * + * {
+	margin-top: 1rem;
+}
+
+.grid {
+	display: grid;
+	gap: 1rem;
+}
+
+@media (min-width: 900px) {
+	.grid.two {
+		grid-template-columns: 1fr 1fr;
+	}
+	.grid.main-side {
+		grid-template-columns: 2fr 1fr;
+	}
+}
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	font: inherit;
+	font-weight: 600;
+	padding: 0.55rem 1rem;
+	border-radius: 8px;
+	border: 2px solid var(--text);
+	background: var(--text);
+	color: var(--bg);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.button.secondary {
+	background: transparent;
+	color: var(--text);
+}
+
+.button[disabled],
+.button[aria-disabled='true'] {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+.tag {
+	display: inline-block;
+	font-size: 0.8rem;
+	font-weight: 600;
+	padding: 0.1rem 0.5rem;
+	border-radius: 999px;
+	border: 1px solid var(--border);
+	color: var(--muted);
+}
+
+.tag.provisional {
+	border-color: var(--notice-border);
+	color: var(--notice-text);
+	background: var(--notice-bg);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+ul.plain {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+fieldset {
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	padding: 0.75rem 1rem 1rem;
+	margin: 0 0 1rem;
+}
+
+legend {
+	font-weight: 600;
+	padding: 0 0.25rem;
+}
+
+label.option {
+	display: flex;
+	gap: 0.6rem;
+	align-items: flex-start;
+	padding: 0.5rem 0.25rem;
+	cursor: pointer;
+}
+
+input[type='radio'] {
+	accent-color: var(--text);
+	width: 1.1rem;
+	height: 1.1rem;
+	margin-top: 0.15rem;
+}
+
+input[type='text'] {
+	font: inherit;
+	color: inherit;
+	background: var(--surface);
+	border: 1px solid var(--muted);
+	border-radius: 6px;
+	padding: 0.45rem 0.6rem;
+	width: 100%;
+	max-width: 32rem;
+}
